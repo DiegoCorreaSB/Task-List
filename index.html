@@ -14,10 +14,14 @@
     <h1>Task List</h1>
     
     <div class="addTask">
-        <input type="text" name="title" id="inpTitle">
-        <input type="text" name="description" id="inpDescription">
-        <input type="text" name="date" id="inpDate">
-        <input type="text" name="option" id="inpOption">
+        <input type="text" name="title" id="inpTitle" placeholder="Título">
+        <input type="text" name="description" id="inpDescription" placeholder="Descrição">
+        <input type="text" name="date" id="inpDate" placeholder="Data de Entrega">
+        <select name="priority" id="inpPriority">
+            <option value="normal">Normal</option>
+            <option value="urgent">Urgente</option>
+            <option value="urgentissimo">Urgentissimo</option>
+        </select>
         <input type="submit" value="Adiocionar tarefa">
     </div>
 
