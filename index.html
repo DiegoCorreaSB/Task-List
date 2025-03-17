@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="src/style/main.css">
+    <link rel="stylesheet" href="src/script/script.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Iansui&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Task List</h1>
+    
+    <div class="addTask">
+        <input type="text" name="title" id="inpTitle">
+        <input type="text" name="description" id="inpDescription">
+        <input type="text" name="date" id="inpDate">
+        <input type="text" name="option" id="inpOption">
+        <input type="submit" value="Adiocionar tarefa">
+    </div>
+
+    <div class="containerList">
+        <table>
+            <thead id="headTable">
+                <tr>Concluidas</tr>
+                <tr>Titulo</tr>
+                <tr>Descrição</tr>
+                <tr>Data</tr>
+                <tr>Opções</tr>
+            </thead>
+
+            <tbody id="bobyTable">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

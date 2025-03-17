@@ -1,0 +1,13 @@
+@charset "UFT-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Iansui&display=swap');
+
+:root {
+    --background-color: ##FEFCFB;
+    --blue-dark: #0A1128;
+    --background-table: #001F54;
+    --blue-light: #034078;
+    --color-font: #1DD3B0;
+
+    --default-font: "Bebas Neue", sans-serif; 
+}
