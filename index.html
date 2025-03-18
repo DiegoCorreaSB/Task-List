@@ -11,6 +11,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Iansui&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <dialog id="addTaskDialog">
+        <div class="addTask">
+            <div class="title">
+                <h2>Título:</h2>
+                <input type="text" name="title" id="inpTitle" placeholder="Título">
+            </div>
+            <div class="descripion">
+                <h2>Descrição:</h2>
+                <input type="text" name="description" id="inpDescription" placeholder="Descrição">
+            </div>
+            <div class="date">
+                <h2>Data de Entrega:</h2>
+                <input type="text" name="date" id="inpDate" placeholder="Data de Entrega">
+            </div>
+            <div class="status">
+                <h2>Urgência:</h2>
+                <select name="status" id="inpStatus">
+                    <option value="normal">normal</option>
+                    <option value="urgent">urgente</option>
+                    <option value="attention">atenção</option>option>
+                </select>
+            </div>
+            <div class="bottonNewTask">
+                <input type="submit" value="Adicionar tarefa" id="submitTask">
+            </div>
+        </div>
+    </dialog>
+
     <div class="body-Header">
         <div class="head-title">
             <h1>Lista de Tarefa</h1>
@@ -23,31 +52,13 @@
                 <option value="done">Canceladas</option>
             </select>
 
-            <a href="new_task.html"><button class="btn-newtask"><i class="fa-solid fa-plus"></i>Nova Tarefa</button></a>
+            <button class="btn-newtask" id="btnNewTask"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
         </div>
     </div>
 
-    <div class="containerList">
+    <div id="containerList">
         <table>
-            <thead id="headTable">
-                <tr>
-                    <th>Titulo</th>
-                    <th>Descrição</th>
-                    <th>Data de Entrega</th>
-                    <th>Status</th>
-                    <th>Opções</th>
-                </tr>
-            </thead>
-
-            <tbody id="bobyTable"></tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>Concluidas</td>
-                    <td class="btn-option"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-                </tr>
-            </tbody>
+            
         </table>
     </div>
 

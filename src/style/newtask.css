@@ -1,0 +1,18 @@
+@charset "UFT-8";
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+}
+.addTask {
+    width: 800px;
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+}
