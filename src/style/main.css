@@ -24,15 +24,6 @@ body {
     color: whitesmoke;
 }
 
-dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 900px;
-    height: 800PX;
-}
 
 .body-Header {
     display: flex;
@@ -78,6 +69,7 @@ dialog {
 .btn-newtask:hover {
     background-image: linear-gradient(to top, #0b2e69, #0566c0);
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .fa-solid{

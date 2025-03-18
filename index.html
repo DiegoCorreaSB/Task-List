@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task List</title>
     <link rel="stylesheet" href="src/style/main.css">
+    <link rel="stylesheet" href="src/style/newtask.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
@@ -15,27 +16,31 @@
     <dialog id="addTaskDialog">
         <div class="addTask">
             <div class="title">
-                <h2>Título:</h2>
+                <h4>Título:</h4>
                 <input type="text" name="title" id="inpTitle" placeholder="Título">
             </div>
             <div class="descripion">
-                <h2>Descrição:</h2>
+                <h4>Descrição:</h4>
                 <input type="text" name="description" id="inpDescription" placeholder="Descrição">
             </div>
-            <div class="date">
-                <h2>Data de Entrega:</h2>
-                <input type="text" name="date" id="inpDate" placeholder="Data de Entrega">
-            </div>
-            <div class="status">
-                <h2>Urgência:</h2>
-                <select name="status" id="inpStatus">
-                    <option value="normal">normal</option>
-                    <option value="urgent">urgente</option>
-                    <option value="attention">atenção</option>option>
-                </select>
-            </div>
-            <div class="bottonNewTask">
-                <input type="submit" value="Adicionar tarefa" id="submitTask">
+            <div class="date" style="
+            margin-bottom: 0px;">
+                <div class="selection-date">
+                    <h4>Data de Entrega:</h4>
+                    <input type="date" name="date" id="inpDate" placeholder="Data de Entrega">
+                </div>
+
+                <div class="selection-status">
+                    <h4>Urgência:</h4>
+                    <select name="status" id="inpStatus">
+                        <option value="normal">normal</option>
+                        <option value="urgent">urgente</option>
+                        <option value="attention">atenção</option>option>
+                    </select>
+                </div>
+                <div class="containerNewTask">
+                    <input type="submit" value="Adicionar tarefa" id="submitTask">
+                </div>
             </div>
         </div>
     </dialog>
