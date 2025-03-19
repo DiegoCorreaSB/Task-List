@@ -72,8 +72,19 @@ body {
     text-decoration: underline;
 }
 
+.fa-solid:hover{
+    cursor: pointer;
+}
 .fa-solid{
     margin-right: 8px;
+}
+
+#btnEditTask {
+    color: var(--color-font);
+}
+
+#btnDeleteTask {
+    color: rgb(189, 8, 8);
 }
 
 #containerList {
