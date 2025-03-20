@@ -3,6 +3,8 @@ const addTaskDialog = document.getElementById ('addTaskDialog')
 const editTaskDialog = document.getElementById ('editTaskDialog')
 const submitTask = document.getElementById ('submitTask')
 const containerList = document.getElementById('containerList')
+const containerEditTask = document.getElementById ('containerEditTask')
+const containerNewTask = document.getElementById ('containerNewTask')
 
 import { taskBanc, newTask } from '../../database/banco.js';
 
@@ -21,6 +23,7 @@ function validateData(){
 
 btnNewTask.onclick = () => {
     //console.log('1')
+    containerEditTask.style.display = 'none'
     addTaskDialog.showModal()
 }
 
@@ -100,14 +103,15 @@ containerList.addEventListener('click', function(event) {
         //console.log('Ícone de exclusão clicado para a tarefa:', index)
         deleteRow(index, event.target.closest('table'))
     } else if (event.target.classList.contains('btnEditTask')) {
-        const index = parseInt(event.target.dataset.index)
-        editTask(index, taskBanc)
+
+        containerEditTask.style.display = 'flex'
+        containerNewTask.style.display = 'none'
+        containerNewTask.style.flexDirection = 'column'
+
+        addTaskDialog.showModal(); // Abrir o modal para edição
+        
     }
 }) 
-
-function editTask(index, taskBanc) {
-    
-}
 
 function deleteRow(index, table) {
     // Remova a linha da tabela

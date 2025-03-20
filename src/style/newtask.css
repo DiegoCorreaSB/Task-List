@@ -64,13 +64,13 @@ dialog {
     justify-content: space-around; 
 }
 
-.containerNewTask {
+#containerNewTask {
     display: flex;
     align-items: end;
     justify-content: space-around;
 }
 
-.containerEditTask {
+#containerEditTask {
     margin-top: 30px;
 
     display: flex;
