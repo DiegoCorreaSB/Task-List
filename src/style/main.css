@@ -79,11 +79,11 @@ body {
     margin-right: 8px;
 }
 
-#btnEditTask {
+.btnEditTask {
     color: var(--color-font);
 }
 
-#btnDeleteTask {
+.btnDeleteTask {
     color: rgb(189, 8, 8);
 }
 
