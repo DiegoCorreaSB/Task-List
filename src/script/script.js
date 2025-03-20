@@ -1,5 +1,6 @@
 const btnNewTask = document.getElementById ('btnNewTask')
 const addTaskDialog = document.getElementById ('addTaskDialog')
+const editTaskDialog = document.getElementById ('editTaskDialog')
 const submitTask = document.getElementById ('submitTask')
 const containerList = document.getElementById('containerList')
 
@@ -92,40 +93,25 @@ function createTable(taskBanc) {
     containerList.appendChild(table)
 }
 
-//verificar se Opção Excluir se é clicada
+//verificar se Opção Excluir/Editar se é clicada
 containerList.addEventListener('click', function(event) {
     if (event.target.classList.contains('btnDeleteTask')) {
         const index = parseInt(event.target.dataset.index)
         //console.log('Ícone de exclusão clicado para a tarefa:', index)
         deleteRow(index, event.target.closest('table'))
-    }
-})
-
-//verificar se Opção Editar se é clicada
-containerList.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btnEditTask')) {
+    } else if (event.target.classList.contains('btnEditTask')) {
         const index = parseInt(event.target.dataset.index)
         editTask(index, taskBanc)
-        //console.log('Ícone de editar clicado para a tarefa:', index)
     }
-})
+}) 
 
 function editTask(index, taskBanc) {
-    const tarefa = taskBanc.banco[index]
-
-    document.getElementById('inpTitle').value = tarefa.titulo
-    document.getElementById('inpDescription').value = tarefa.descricao
-    document.getElementById('inpDate').value = tarefa.dataentrega
-    document.getElementById('inpStatus').value = tarefa.status
-
-    addTaskDialog.showModal()
-    addTaskDialog.dataset.index = index
+    
 }
 
 function deleteRow(index, table) {
     // Remova a linha da tabela
     table.deleteRow(index + 1)
-
     taskBanc.banco.splice(index, 1)
     removeTable(taskBanc)
     createTable(taskBanc)
