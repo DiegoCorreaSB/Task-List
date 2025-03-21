@@ -31,6 +31,7 @@ function validateData(){
 btnNewTask.onclick = () => {
     //console.log('1')
     containerEditTask.style.display = 'none'
+    containerNewTask.style.display = 'flex'
     addTaskDialog.showModal()
 }
 
@@ -141,6 +142,10 @@ saveTask.onclick = () => {
     addTaskDialog.close()
     removeTable(taskBanc)
     createTable(taskBanc)
+
+    document.getElementById('inpTitle').value = "";
+    document.getElementById('inpDescription').value = "";
+    document.getElementById('inpDate').value = "";
 }
 
 cancel.onclick = () => {
