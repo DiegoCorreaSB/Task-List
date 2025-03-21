@@ -1,10 +1,17 @@
 const btnNewTask = document.getElementById ('btnNewTask')
 const addTaskDialog = document.getElementById ('addTaskDialog')
-const editTaskDialog = document.getElementById ('editTaskDialog')
+const saveTask = document.getElementById ('saveTask')
+const cancel = document.getElementById ('cancel')
 const submitTask = document.getElementById ('submitTask')
 const containerList = document.getElementById('containerList')
 const containerEditTask = document.getElementById ('containerEditTask')
 const containerNewTask = document.getElementById ('containerNewTask')
+
+//REF FORMULARIO
+const inpTitle = document.querySelector("#inpTitle");
+const inpDescription = document.querySelector("#inpDescription");
+const inpDate = document.querySelector("#inpDate");
+const inpStatus = document.querySelector("#inpStatus");
 
 import { taskBanc, newTask } from '../../database/banco.js';
 
@@ -85,7 +92,7 @@ function createTable(taskBanc) {
         let tdOption = document.createElement('td')
         tdOption.innerHTML = `
             <input style="margin-right: 3px; width: 15px; height: 15px;" type="checkbox" id="taskCheckbox-${index}" value="concluida">
-            <i class="fa-solid fa-pen-to-square btnEditTask"></i>
+            <i class="fa-solid fa-pen-to-square btnEditTask" data-index="${index}"></i>
             <i class="fa-solid fa-trash btnDeleteTask" data-index="${index}"></i>`
 
         tr.appendChild(tdOption)
@@ -96,22 +103,50 @@ function createTable(taskBanc) {
     containerList.appendChild(table)
 }
 
+let index
+
 //verificar se Opção Excluir/Editar se é clicada
 containerList.addEventListener('click', function(event) {
     if (event.target.classList.contains('btnDeleteTask')) {
-        const index = parseInt(event.target.dataset.index)
+        index = parseInt(event.target.dataset.index)
+        console.log(index);
+        
         //console.log('Ícone de exclusão clicado para a tarefa:', index)
         deleteRow(index, event.target.closest('table'))
     } else if (event.target.classList.contains('btnEditTask')) {
-
+        
+        index = parseInt(event.target.dataset.index)
+        console.log(index);
+        
         containerEditTask.style.display = 'flex'
         containerNewTask.style.display = 'none'
         containerNewTask.style.flexDirection = 'column'
 
+        inpTitle.value = taskBanc.banco[index].titulo;
+        inpDescription.value = taskBanc.banco[index].descricao;
+        inpDate.value = taskBanc.banco[index].dataentrega;
+        inpStatus.value = taskBanc.banco[index].status;
         addTaskDialog.showModal(); // Abrir o modal para edição
-        
     }
 }) 
+
+saveTask.onclick = () => {
+    console.log(index);
+
+    taskBanc.banco[index].titulo = inpTitle.value
+    taskBanc.banco[index].descricao = inpDescription.value
+    taskBanc.banco[index].dataentrega = inpDate.value    
+    taskBanc.banco[index].status = inpStatus.value
+
+    addTaskDialog.close()
+    removeTable(taskBanc)
+    createTable(taskBanc)
+}
+
+cancel.onclick = () => {
+    addTaskDialog.close()
+
+}
 
 function deleteRow(index, table) {
     // Remova a linha da tabela
